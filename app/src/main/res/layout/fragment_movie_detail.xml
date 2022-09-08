@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    tools:context=".feature.detail.movie.MovieDetailFragment">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:elevation="@dimen/dimen5"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/movie_loading" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen400"
+        android:background="@color/app_background"
+        android:theme="@style/Theme.OBSS_Staj"
+        android:visibility="invisible">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/moviePoster"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen350"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="matrix"
+            android:src="@drawable/discover"
+            app:shapeAppearanceOverlay="@style/ImageView.BottomRounded" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen100"
+            android:layout_marginStart="@dimen/dimen20"
+            android:layout_marginTop="@dimen/dimen50_neg"
+            android:layout_marginEnd="@dimen/dimen20"
+            android:background="@drawable/detail_bg">
+
+            <TextView
+                android:id="@+id/movieName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen10"
+                android:layout_marginTop="@dimen/dimen10"
+                android:fontFamily="@font/muli_regular"
+                android:lines="2"
+                android:text="@string/movie_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/favourite"
+                android:layout_width="@dimen/dimen25"
+                android:layout_height="@dimen/dimen25"
+                android:layout_marginTop="@dimen/dimen10"
+                android:layout_marginEnd="@dimen/dimen10"
+                android:contentDescription="@string/favourite"
+                android:src="@drawable/favourite"
+                android:tag="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/runtimeCard"
+                android:layout_width="@dimen/dimen130"
+                android:layout_height="@dimen/dimen30"
+                android:layout_marginStart="@dimen/dimen10"
+                android:layout_marginTop="@dimen/dimen10"
+                app:cardBackgroundColor="@color/electric_violet"
+                app:cardCornerRadius="@dimen/dimen15"
+                app:cardElevation="@dimen/elevation12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/movieName">
+
+                <TextView
+                    android:id="@+id/movieRuntime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen5"
+                    android:layout_marginEnd="@dimen/dimen5"
+                    android:fontFamily="@font/muli_regular"
+                    android:gravity="center"
+                    android:text="@string/runtime_example"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size14"
+                    android:textStyle="bold"
+                    app:drawableStartCompat="@drawable/ic_time" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/dimen140"
+                android:layout_height="@dimen/dimen30"
+                android:layout_marginStart="@dimen/dimen10"
+                android:layout_marginTop="@dimen/dimen10"
+                app:cardBackgroundColor="@color/yellow_sea"
+                app:cardCornerRadius="@dimen/dimen15"
+                app:cardElevation="@dimen/elevation12"
+                app:layout_constraintStart_toEndOf="@+id/runtimeCard"
+                app:layout_constraintTop_toBottomOf="@+id/movieName">
+
+                <TextView
+                    android:id="@+id/movieRating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="@dimen/dimen5"
+                    android:fontFamily="@font/muli_regular"
+                    android:gravity="center_vertical|end"
+                    android:text="@string/rating_example"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size16"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="@dimen/dimen17"
+                    android:layout_height="@dimen/dimen17"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_marginStart="@dimen/dimen5"
+                    android:contentDescription="@string/rating"
+                    android:src="@drawable/star"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dimen10"
+        android:visibility="invisible"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintTop_toBottomOf="@id/moviePoster">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_background"
+            android:padding="@dimen/dimen15">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.35" />
+
+            <TextView
+                android:id="@+id/releaseDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/muli_regular"
+                android:text="@string/release_date"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/genreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/muli_regular"
+                android:gravity="start"
+                android:text="@string/genre"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/guidelineGenre"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/movieReleaseDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen20"
+                android:fontFamily="@font/muli_regular"
+                android:text="@string/release_date_example"
+                android:textColor="@color/jumbo"
+                android:textSize="@dimen/size14"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/releaseDateText" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/genreCard1"
+                android:layout_width="@dimen/dimen70"
+                android:layout_height="@dimen/dimen30"
+                android:layout_marginTop="@dimen/dimen10"
+                app:cardBackgroundColor="@color/dodger_blue"
+                app:cardCornerRadius="@dimen/dimen15"
+                app:cardElevation="@dimen/elevation12"
+                app:layout_constraintStart_toStartOf="@id/guidelineGenre"
+                app:layout_constraintTop_toBottomOf="@id/genreText">
+
+                <TextView
+                    android:id="@+id/movieGenre1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/muli_regular"
+                    android:gravity="center"
+                    android:text="@string/adventure"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size12" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/genreCard2"
+                android:layout_width="@dimen/dimen70"
+                android:layout_height="@dimen/dimen30"
+                android:layout_marginStart="@dimen/dimen5"
+                android:layout_marginTop="@dimen/dimen10"
+                android:visibility="invisible"
+                app:cardBackgroundColor="@color/electric_violet"
+                app:cardCornerRadius="@dimen/dimen15"
+                app:cardElevation="@dimen/elevation12"
+                app:layout_constraintStart_toEndOf="@id/genreCard1"
+                app:layout_constraintTop_toBottomOf="@id/genreText">
+
+                <TextView
+                    android:id="@+id/movieGenre2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/muli_regular"
+                    android:gravity="center"
+                    android:text="@string/action"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size12"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/genreCard3"
+                android:layout_width="@dimen/dimen70"
+                android:layout_height="@dimen/dimen30"
+                android:layout_marginStart="@dimen/dimen5"
+                android:layout_marginTop="@dimen/dimen10"
+                android:visibility="invisible"
+                app:cardBackgroundColor="@color/yellow_sea"
+                app:cardCornerRadius="@dimen/dimen15"
+                app:cardElevation="@dimen/elevation12"
+                app:layout_constraintStart_toEndOf="@id/genreCard2"
+                app:layout_constraintTop_toBottomOf="@id/genreText">
+
+                <TextView
+                    android:id="@+id/movieGenre3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/muli_regular"
+                    android:gravity="center"
+                    android:text="@string/science_fiction"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size12"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/overviewText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen30"
+                android:fontFamily="@font/muli_regular"
+                android:text="@string/overview"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/genreCard1" />
+
+            <TextView
+                android:id="@+id/movieOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen20"
+                android:fontFamily="@font/muli_regular"
+                android:text="@string/overview"
+                android:textColor="@color/jumbo"
+                android:textSize="@dimen/size14"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/overviewText" />
+
+            <TextView
+                android:id="@+id/trailerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen30"
+                android:fontFamily="@font/muli_regular"
+                android:text="@string/trailers"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/movieOverview" />
+
+            <androidx.appcompat.widget.AppCompatToggleButton
+                android:id="@+id/showTrailers"
+                android:layout_width="wrap_content"
+                android:background="@drawable/detail_bg"
+                android:textOn="@string/hide"
+                android:layout_marginTop="@dimen/dimen30"
+                android:layout_marginStart="@dimen/dimen30"
+                android:textOff="@string/show"
+                android:textColor="@color/white"
+                android:fontFamily="@font/muli_regular"
+                android:textSize="@dimen/size12"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:layout_height="@dimen/dimen25"
+                app:layout_constraintStart_toEndOf="@+id/trailerText"
+                app:layout_constraintTop_toBottomOf="@id/movieOverview"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:id="@+id/rvTrailer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dimen10"
+                android:background="@color/app_background"
+                android:layoutAnimation="@anim/layout_animation"
+                android:orientation="horizontal"
+                android:overScrollMode="ifContentScrolls"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/trailerText" />
+
+            <TextView
+                android:id="@+id/castText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen30"
+                android:fontFamily="@font/muli_regular"
+                android:text="@string/cast"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvTrailer" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCast"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dimen10"
+                android:background="@color/app_background"
+                android:orientation="horizontal"
+                android:overScrollMode="ifContentScrolls"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/castText" />
+
+            <TextView
+                android:id="@+id/similarText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen30"
+                android:fontFamily="@font/muli_regular"
+                android:text="@string/similar_movies"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvCast" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSimilar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dimen10"
+                android:background="@color/app_background"
+                android:orientation="horizontal"
+                android:overScrollMode="ifContentScrolls"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/similarText" />
+
+            <TextView
+                android:id="@+id/reviewsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen30"
+                android:fontFamily="@font/muli_regular"
+                android:text="@string/reviews"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size16"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvSimilar" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvReviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen10"
+                android:background="@color/app_background"
+                android:overScrollMode="ifContentScrolls"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reviewsText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

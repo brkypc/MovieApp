@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimen5"
+    android:layout_marginBottom="@dimen/dimen5"
+    app:cardBackgroundColor="@color/app_background"
+    app:cardCornerRadius="@dimen/dimen15"
+    app:cardElevation="@dimen/elevation12">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dimen10">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imageCard"
+            android:layout_width="@dimen/dimen70"
+            android:layout_height="@dimen/dimen70"
+            app:cardBackgroundColor="@color/app_background"
+            app:cardCornerRadius="@dimen/dimen50"
+            app:cardElevation="@dimen/elevation12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/reviewImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/reviewName"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen30"
+            android:layout_marginStart="@dimen/dimen10"
+            android:layout_marginTop="@dimen/dimen10"
+            android:fontFamily="@font/baloo"
+            android:gravity="start"
+            android:text="@string/author_name"
+            android:textColor="@color/concrete"
+            android:textSize="@dimen/size14"
+            app:layout_constraintStart_toEndOf="@+id/imageCard"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/reviewContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen10"
+            android:layout_marginTop="@dimen/dimen15"
+            android:layout_marginEnd="@dimen/dimen10"
+            android:fontFamily="@font/muli_regular"
+            android:text="@string/content"
+            android:textColor="@color/jumbo"
+            android:textSize="@dimen/size12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageCard" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

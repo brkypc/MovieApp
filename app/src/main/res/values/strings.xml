@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Movie &amp; TV</string>
+    <string name="movie">MOVIE</string>
+    <string name="tv">TV</string>
+    <string name="at_sign">\@</string>
+    <string name="favourites">Favourites</string>
+    <string name="add_movie">You can add movies to your favourites</string>
+    <string name="add_tv">You can add tv shows to your favourites</string>
+    <string name="movie_name">Movie Name</string>
+    <string name="favourite">Favourite</string>
+    <string name="runtime_example">123 Minutes</string>
+    <string name="rating_example">8.8 (143400+)</string>
+    <string name="rating">Rating</string>
+    <string name="release_date">Release Date</string>
+    <string name="genre">Genre</string>
+    <string name="release_date_example">2022–07–06</string>
+    <string name="adventure">Adventure</string>
+    <string name="action">Action</string>
+    <string name="science_fiction">Science Fiction</string>
+    <string name="overview">Overview</string>
+    <string name="cast">Cast</string>
+    <string name="reviews">Reviews</string>
+    <string name="change_layout">Change Layout</string>
+    <string name="search_movie">Search Movie</string>
+    <string name="cast_name">Cast Name</string>
+    <string name="genre_example">Action, Adventure, Science Fiction</string>
+    <string name="year_example">2022</string>
+    <string name="language_example">EN</string>
+    <string name="vote_example">10.0</string>
+    <string name="author_name">Author Name</string>
+    <string name="content">Content</string>
+    <string name="tv_shows">TV Shows</string>
+    <string name="search_tv">Search TV Show</string>
+    <string name="similar_movies">Recommended Movies</string>
+    <string name="trailers">Trailers</string>
+    <string name="hide">Hide</string>
+    <string name="show">Show</string>
+    <string name="similar_tv">Recommended Tv Shows</string>
+    <string-array name="tab_names">
+        <item>@string/movie</item>
+        <item>@string/tv</item>
+    </string-array>
+</resources>

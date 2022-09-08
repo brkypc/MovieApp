@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical"
+    android:padding="@dimen/dimen5"
+    tools:context=".feature.list.movie.MovieListFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie"
+            android:layout_width="@dimen/dimen200"
+            android:layout_height="@dimen/dimen40"
+            android:layout_gravity="center"
+            android:elevation="@dimen/dimen5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/movies" />
+
+        <ImageView
+            android:id="@+id/changeLayout"
+            android:layout_width="@dimen/dimen25"
+            android:layout_height="@dimen/dimen25"
+            android:layout_marginEnd="@dimen/dimen5"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/change_layout"
+            android:scaleType="fitXY"
+            android:src="@drawable/linear_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbar"
+        android:layout_width="@dimen/dimen300"
+        android:layout_height="@dimen/dimen50"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/dimen10"
+        android:layout_marginTop="@dimen/dimen10"
+        android:layout_marginEnd="@dimen/dimen10"
+        android:background="@drawable/toolbar_bg"
+        android:padding="@dimen/dimen10">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchMovie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:iconifiedByDefault="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryBackground="@android:color/transparent"
+            app:queryHint="@string/search_movie" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMovies"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layoutAnimation="@anim/layout_animation"
+        android:overScrollMode="ifContentScrolls" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+</LinearLayout>

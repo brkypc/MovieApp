@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="elevation12">12dp</dimen>
+    <dimen name="size12">12sp</dimen>
+    <dimen name="size14">14sp</dimen>
+    <dimen name="size16">16sp</dimen>
+    <dimen name="size18">18sp</dimen>
+    <dimen name="dimen50_neg">-50dp</dimen>
+    <dimen name="dimen5">5dp</dimen>
+    <dimen name="dimen10">10dp</dimen>
+    <dimen name="dimen15">15dp</dimen>
+    <dimen name="dimen17">17dp</dimen>
+    <dimen name="dimen20">20dp</dimen>
+    <dimen name="dimen25">25dp</dimen>
+    <dimen name="dimen30">30dp</dimen>
+    <dimen name="dimen40">40dp</dimen>
+    <dimen name="dimen50">50dp</dimen>
+    <dimen name="dimen60">60dp</dimen>
+    <dimen name="dimen70">70dp</dimen>
+    <dimen name="dimen80">80dp</dimen>
+    <dimen name="dimen100">100dp</dimen>
+    <dimen name="dimen120">120dp</dimen>
+    <dimen name="dimen125">125dp</dimen>
+    <dimen name="dimen130">130dp</dimen>
+    <dimen name="dimen150">150dp</dimen>
+    <dimen name="dimen180">180dp</dimen>
+    <dimen name="dimen200">200dp</dimen>
+    <dimen name="dimen300">300dp</dimen>
+    <dimen name="dimen350">350dp</dimen>
+    <dimen name="dimen400">400dp</dimen>
+    <dimen name="dimen230">230dp</dimen>
+    <dimen name="dimen140">140dp</dimen>
+
+</resources>

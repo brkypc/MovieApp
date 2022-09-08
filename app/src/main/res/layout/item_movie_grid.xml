@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen5"
+    app:cardBackgroundColor="@color/app_background"
+    app:cardCornerRadius="@dimen/dimen15"
+    app:cardElevation="@dimen/elevation12">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dimen5">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/moviePoster"
+            android:layout_width="@dimen/dimen80"
+            android:layout_height="@dimen/dimen120"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@drawable/movie"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ImageView.RoundedSmall" />
+
+        <TextView
+            android:id="@+id/movieTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen5"
+            android:layout_marginTop="@dimen/dimen5"
+            android:layout_marginEnd="@dimen/dimen5"
+            android:fontFamily="@font/muli_regular"
+            android:gravity="start"
+            android:lines="4"
+            android:text="@string/movie_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size12"
+            app:layout_constraintEnd_toStartOf="@+id/favourite"
+            app:layout_constraintStart_toEndOf="@+id/moviePoster"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/favourite"
+            android:layout_width="@dimen/dimen15"
+            android:layout_height="@dimen/dimen15"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@drawable/favourite"
+            android:tag="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/voteCard"
+            android:layout_width="@dimen/dimen60"
+            android:layout_height="@dimen/dimen30"
+            android:layout_marginStart="@dimen/dimen5"
+            android:layout_marginBottom="@dimen/dimen5"
+            app:cardBackgroundColor="@color/charade"
+            app:cardCornerRadius="@dimen/dimen15"
+            app:cardElevation="@dimen/elevation12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/moviePoster">
+
+            <TextView
+                android:id="@+id/movieVote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="@dimen/dimen10"
+                android:fontFamily="@font/muli_regular"
+                android:gravity="center_vertical|end"
+                android:text="@string/vote_example"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size12" />
+
+            <ImageView
+                android:layout_width="@dimen/dimen17"
+                android:layout_height="@dimen/dimen17"
+                android:layout_gravity="center_vertical|start"
+                android:layout_marginStart="@dimen/dimen5"
+                android:contentDescription="@string/rating"
+                android:src="@drawable/star"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/movieListFragment">
+
+    <fragment
+        android:id="@+id/movieListFragment"
+        android:name="com.example.staj.feature.list.movie.MovieListFragment"
+        android:label="fragment_movie_list"
+        tools:layout="@layout/fragment_movie_list">
+        <action
+            android:id="@+id/listToDetail"
+            app:destination="@id/movieDetailFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.example.staj.feature.detail.movie.MovieDetailFragment"
+        android:label="fragment_movie_detail"
+        tools:layout="@layout/fragment_movie_detail">
+        <argument
+            android:name="movieID"
+            app:argType="integer" />
+        <action
+            android:id="@+id/detailToDetail"
+            app:destination="@id/movieDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouriteMoviesFragment"
+        android:name="com.example.staj.feature.favourite.movie.FavouriteMoviesFragment"
+        android:label="fragment_favourite_movies"
+        tools:layout="@layout/fragment_favourite_movies"/>
+    <fragment
+        android:id="@+id/tvListFragment"
+        android:name="com.example.staj.feature.list.tv.TvListFragment"
+        android:label="fragment_tv_list"
+        tools:layout="@layout/fragment_tv_list" >
+        <action
+            android:id="@+id/listToDetail"
+            app:destination="@id/tvDetailFragment"
+            app:enterAnim="@anim/slide_in_up"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_up" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvDetailFragment"
+        android:name="com.example.staj.feature.detail.tv.TvDetailFragment"
+        android:label="TvDetailFragment"
+        tools:layout="@layout/fragment_movie_detail">
+        <argument
+            android:name="tvID"
+            app:argType="integer" />
+        <action
+            android:id="@+id/detailToDetailTv"
+            app:destination="@id/tvDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouriteTvFragment"
+        android:name="com.example.staj.feature.favourite.tv.FavouriteTvFragment"
+        android:label="FavouriteTvFragment"
+        tools:layout="@layout/fragment_favourite_movies"/>
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.example.staj.feature.favourite.FavouritesFragment"
+        android:label="FavouritesFragment"
+        tools:layout="@layout/fragment_favourites">
+        <action
+            android:id="@+id/favouriteToDetailTV"
+            app:destination="@id/tvDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/favouriteToDetailMovie"
+            app:destination="@id/movieDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+</navigation>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimen5"
+    android:background="@color/app_background"
+    android:padding="@dimen/dimen10">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/moviePoster"
+        android:layout_width="@dimen/dimen130"
+        android:layout_height="@dimen/dimen180"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@drawable/movie"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ImageView.RoundedSmall" />
+
+    <TextView
+        android:id="@+id/movieTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen10"
+        android:layout_marginEnd="@dimen/dimen5"
+        android:fontFamily="@font/baloo"
+        android:gravity="start"
+        android:lines="2"
+        android:text="@string/movie_name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size16"
+        app:layout_constraintEnd_toStartOf="@+id/favourite"
+        app:layout_constraintStart_toEndOf="@+id/moviePoster"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/favourite"
+        android:layout_width="@dimen/dimen25"
+        android:layout_height="@dimen/dimen25"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@drawable/favourite"
+        android:tag="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/movieGenre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen10"
+        android:layout_marginTop="@dimen/dimen5"
+        android:layout_marginEnd="@dimen/dimen10"
+        android:fontFamily="@font/muli_regular"
+        android:gravity="start"
+        android:text="@string/genre_example"
+        android:textColor="@color/jumbo"
+        android:textSize="@dimen/size14"
+        app:layout_constraintEnd_toEndOf="@+id/favourite"
+        app:layout_constraintStart_toEndOf="@+id/moviePoster"
+        app:layout_constraintTop_toBottomOf="@+id/movieTitle" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/releaseDateCard"
+        android:layout_width="@dimen/dimen70"
+        android:layout_height="@dimen/dimen30"
+        android:layout_marginStart="@dimen/dimen10"
+        android:layout_marginTop="@dimen/dimen20"
+        app:cardBackgroundColor="@color/charade"
+        app:cardCornerRadius="@dimen/dimen15"
+        app:cardElevation="@dimen/elevation12"
+        app:layout_constraintEnd_toStartOf="@+id/languageCard"
+        app:layout_constraintStart_toEndOf="@+id/moviePoster"
+        app:layout_constraintTop_toBottomOf="@+id/movieGenre">
+
+        <TextView
+            android:id="@+id/movieReleaseDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/muli_regular"
+            android:gravity="center"
+            android:text="@string/year_example"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size14" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/languageCard"
+        android:layout_width="@dimen/dimen70"
+        android:layout_height="@dimen/dimen30"
+        android:layout_marginStart="@dimen/dimen10"
+        android:layout_marginTop="@dimen/dimen20"
+        app:cardBackgroundColor="@color/charade"
+        app:cardCornerRadius="@dimen/dimen15"
+        app:cardElevation="@dimen/elevation12"
+        app:layout_constraintStart_toEndOf="@+id/releaseDateCard"
+        app:layout_constraintTop_toBottomOf="@+id/movieGenre">
+
+        <TextView
+            android:id="@+id/movieLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/muli_regular"
+            android:gravity="center"
+            android:text="@string/language_example"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size14" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/voteCard"
+        android:layout_width="@dimen/dimen130"
+        android:layout_height="@dimen/dimen30"
+        android:layout_marginStart="@dimen/dimen10"
+        android:layout_marginTop="@dimen/dimen10"
+        app:cardBackgroundColor="@color/charade"
+        app:cardCornerRadius="@dimen/dimen15"
+        app:cardElevation="@dimen/elevation12"
+        app:layout_constraintStart_toEndOf="@+id/moviePoster"
+        app:layout_constraintTop_toBottomOf="@+id/releaseDateCard">
+
+        <TextView
+            android:id="@+id/movieVote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="@dimen/dimen5"
+            android:fontFamily="@font/muli_regular"
+            android:gravity="center_vertical|end"
+            android:text="@string/rating_example"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size14" />
+
+        <ImageView
+            android:layout_width="@dimen/dimen17"
+            android:layout_height="@dimen/dimen17"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginStart="@dimen/dimen10"
+            android:contentDescription="@string/rating"
+            android:src="@drawable/star"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

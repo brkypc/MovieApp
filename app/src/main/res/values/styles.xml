@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ImageView.BottomRounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomRight">@dimen/dimen40</item>
+        <item name="cornerSizeBottomLeft">@dimen/dimen40</item>
+    </style>
+
+    <style name="ImageView.Rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/dimen50</item>
+    </style>
+
+    <style name="ImageView.RoundedSmall" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/dimen10</item>
+    </style>
+
+</resources>

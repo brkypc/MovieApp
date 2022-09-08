@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dimen150"
+    android:layout_height="@dimen/dimen180"
+    android:layout_margin="@dimen/dimen10"
+    app:cardBackgroundColor="@color/app_background"
+    app:cardCornerRadius="@dimen/dimen15"
+    app:cardElevation="@dimen/elevation12">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/castImage"
+            android:layout_width="@dimen/dimen150"
+            android:layout_height="@dimen/dimen150"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/castName"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen30"
+            android:fontFamily="@font/baloo"
+            android:gravity="center"
+            android:text="@string/cast_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/castImage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
