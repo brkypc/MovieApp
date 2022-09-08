@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/app_background"
     android:orientation="vertical"
-    tools:context=".feature.favourite.movie.FavouriteMoviesFragment">
+    tools:context=".feature.fragments.favourite.movie.FavouriteMoviesFragment">
 
     <TextView
         android:id="@+id/noFavourites"

@@ -29,10 +29,6 @@ data class MovieResponse(
     val revenue: Int,
     @SerializedName("reviews")
     val reviews: Reviews,
-    @SerializedName("recommendations")
-    val similar: MovieListResponse,
-    @SerializedName("videos")
-    val videos: VideoResponse,
     @SerializedName("runtime")
     val runtime: Int?,
     @SerializedName("status")

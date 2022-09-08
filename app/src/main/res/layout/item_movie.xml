@@ -14,7 +14,7 @@
         android:adjustViewBounds="true"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
-        android:src="@drawable/movie"
+        android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -118,7 +118,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/voteCard"
-        android:layout_width="@dimen/dimen130"
+        android:layout_width="@dimen/dimen120"
         android:layout_height="@dimen/dimen30"
         android:layout_marginStart="@dimen/dimen10"
         android:layout_marginTop="@dimen/dimen10"

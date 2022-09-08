@@ -28,7 +28,5 @@
     <dimen name="dimen300">300dp</dimen>
     <dimen name="dimen350">350dp</dimen>
     <dimen name="dimen400">400dp</dimen>
-    <dimen name="dimen230">230dp</dimen>
-    <dimen name="dimen140">140dp</dimen>
 
 </resources>

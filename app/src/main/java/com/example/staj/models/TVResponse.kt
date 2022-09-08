@@ -45,10 +45,6 @@ data class TVResponse(
     val posterPath: String?,
     @SerializedName("reviews")
     val reviews: Reviews,
-    @SerializedName("recommendations")
-    val similar: TVListResponse,
-    @SerializedName("videos")
-    val videos: VideoResponse,
     @SerializedName("status")
     val status: String,
     @SerializedName("tagline")

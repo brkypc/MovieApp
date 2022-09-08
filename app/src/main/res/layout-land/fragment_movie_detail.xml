@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_background"
-    tools:context=".feature.detail.movie.MovieDetailFragment">
+    tools:context=".feature.fragments.detail.movie.MovieDetailFragment">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie"
@@ -15,7 +15,7 @@
         android:elevation="@dimen/dimen5"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/movie_loading" />
+        app:lottie_rawRes="@raw/lottie" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -101,7 +101,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="@dimen/dimen150"
+                android:layout_width="@dimen/dimen125"
                 android:layout_height="@dimen/dimen30"
                 android:layout_marginStart="@dimen/dimen10"
                 android:layout_marginTop="@dimen/dimen10"
@@ -145,7 +145,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="@dimen/dimen10"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintTop_toBottomOf="@id/moviePoster">
 
@@ -305,50 +305,6 @@
                 app:layout_constraintTop_toBottomOf="@id/overviewText" />
 
             <TextView
-                android:id="@+id/trailerText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen30"
-                android:fontFamily="@font/muli_regular"
-                android:text="@string/trailers"
-                android:textColor="@color/white"
-                android:textSize="@dimen/size16"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/movieOverview" />
-
-            <androidx.appcompat.widget.AppCompatToggleButton
-                android:id="@+id/showTrailers"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/dimen25"
-                android:layout_marginStart="@dimen/dimen30"
-                android:layout_marginTop="@dimen/dimen30"
-                android:background="@drawable/detail_bg"
-                android:fontFamily="@font/muli_regular"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textOff="@string/show"
-                android:textOn="@string/hide"
-                android:textSize="@dimen/size12"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/trailerText"
-                app:layout_constraintTop_toBottomOf="@id/movieOverview" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvTrailer"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/dimen10"
-                android:background="@color/app_background"
-                android:layoutAnimation="@anim/layout_animation"
-                android:orientation="horizontal"
-                android:overScrollMode="ifContentScrolls"
-                android:visibility="gone"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/trailerText" />
-
-            <TextView
                 android:id="@+id/castText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -359,7 +315,7 @@
                 android:textSize="@dimen/size16"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rvTrailer" />
+                app:layout_constraintTop_toBottomOf="@id/movieOverview" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvCast"
@@ -374,31 +330,6 @@
                 app:layout_constraintTop_toBottomOf="@id/castText" />
 
             <TextView
-                android:id="@+id/similarText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen30"
-                android:fontFamily="@font/muli_regular"
-                android:text="@string/similar_movies"
-                android:textColor="@color/white"
-                android:textSize="@dimen/size16"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rvCast" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvSimilar"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/dimen10"
-                android:background="@color/app_background"
-                android:orientation="horizontal"
-                android:overScrollMode="ifContentScrolls"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/similarText" />
-
-            <TextView
                 android:id="@+id/reviewsText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -410,7 +341,7 @@
                 android:textStyle="bold"
                 android:visibility="invisible"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rvSimilar" />
+                app:layout_constraintTop_toBottomOf="@id/rvCast" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvReviews"

@@ -11,8 +11,8 @@ import com.example.staj.models.TV
 @Dao
 interface TVDao {
 
-    @Query("SELECT * FROM tv ORDER BY popularity DESC LIMIT 20 OFFSET :offset")
-    suspend fun getAllTV(offset: Int): List<TV>
+    @Query("SELECT * FROM tv ORDER BY popularity DESC LIMIT :limit")
+    suspend fun getAllTV(limit: Int): List<TV>
 
     @Query("SELECT * FROM tv WHERE favourite = 1 ORDER BY popularity DESC")
     fun getFavouriteTV(): LiveData<List<TV>>
@@ -21,14 +21,15 @@ interface TVDao {
     suspend fun getTV(tvID: Int): TV?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(tvList: List<TV>)
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(tv: TV)
 
     @Update
     suspend fun update(tv: TV)
 
-    @Query("UPDATE tv SET popularity = :p, voteAverage = :vA, voteCount =  :vC WHERE tvID = :id")
-    fun updateTv(id: Int, p: Double, vA: Double, vC: Int)
+    @Query(
+        "UPDATE tv SET " +
+            "popularity = :popularity, voteAverage = :voteAverage, voteCount =  :voteCount " +
+            "WHERE tvID = :tvID"
+    )
+    fun updateTv(tvID: Int, popularity: Double, voteAverage: Double, voteCount: Int)
 }

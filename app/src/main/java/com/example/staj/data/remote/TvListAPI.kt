@@ -6,9 +6,10 @@ import retrofit2.http.Query
 
 interface TvListAPI {
 
-    @GET("trending/tv/week")
+    @GET("discover/tv")
     suspend fun listTV(
         @Query("api_key") apiKey: String,
+        @Query("sort_by") sortBy: String,
         @Query("page") page: Int
     ): TVListResponse?
 }

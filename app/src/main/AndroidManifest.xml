@@ -19,7 +19,7 @@
         tools:targetApi="31">
 
         <activity
-            android:name="com.example.staj.feature.MainActivity"
+            android:name="com.example.staj.feature.main.MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>

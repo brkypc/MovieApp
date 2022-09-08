@@ -1,5 +1,6 @@
 package com.example.staj.models
 
+import android.util.Log
 import com.example.staj.util.Constants.ACTION
 import com.example.staj.util.Constants.ACTION_ADVENTURE
 import com.example.staj.util.Constants.ADVENTURE

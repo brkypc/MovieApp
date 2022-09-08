@@ -9,7 +9,7 @@
     <string name="movie_name">Movie Name</string>
     <string name="favourite">Favourite</string>
     <string name="runtime_example">123 Minutes</string>
-    <string name="rating_example">8.8 (143400+)</string>
+    <string name="rating_example">8.8 (1400+)</string>
     <string name="rating">Rating</string>
     <string name="release_date">Release Date</string>
     <string name="genre">Genre</string>
@@ -31,11 +31,6 @@
     <string name="content">Content</string>
     <string name="tv_shows">TV Shows</string>
     <string name="search_tv">Search TV Show</string>
-    <string name="similar_movies">Recommended Movies</string>
-    <string name="trailers">Trailers</string>
-    <string name="hide">Hide</string>
-    <string name="show">Show</string>
-    <string name="similar_tv">Recommended Tv Shows</string>
     <string-array name="tab_names">
         <item>@string/movie</item>
         <item>@string/tv</item>

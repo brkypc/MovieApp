@@ -6,9 +6,10 @@ import retrofit2.http.Query
 
 interface MovieListAPI {
 
-    @GET("trending/movie/week")
+    @GET("discover/movie")
     suspend fun listMovies(
         @Query("api_key") apiKey: String,
+        @Query("sort_by") sortBy: String,
         @Query("page") page: Int
-    ): MovieListResponse?
+    ): MovieListResponse
 }

@@ -9,8 +9,6 @@ object Constants {
     const val TAB_SIZE = 2
     const val LINEAR = 1
     const val GRID = 2
-    const val INSERT = 1
-    const val UPDATE = 2
     const val INDEX0 = 0
     const val INDEX4 = 4
     const val COUNT_THRESHOLD = 10

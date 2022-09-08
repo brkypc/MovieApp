@@ -29,7 +29,5 @@ data class TV(
     @ColumnInfo(name = "cast") var cast: List<Cast>?,
     @ColumnInfo(name = "crew") var crew: List<Crew>?,
     @ColumnInfo(name = "genres") var genres: List<Genre>,
-    @ColumnInfo(name = "reviews") var reviews: List<Review>?,
-    @ColumnInfo(name = "similar") var similar: List<TVData>?,
-    @ColumnInfo(name = "videos") var videos: List<Video>?,
+    @ColumnInfo(name = "reviews") var reviews: List<Review>?
 )
